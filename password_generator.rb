@@ -1,6 +1,36 @@
 # password_generator.rb
 
-puts (('a'..'z').to_a + ('A'..'Z').to_a + ('0'..'9').to_a + %w/! @ # $ % ^ & * < > ?/).shuffle[0..14].join
+lowercase = ('a'..'z').to_a
+uppercase = ('A'..'Z').to_a
+numbers = ('0'..'9').to_a
+specials = %w{! @ # $ % ^ & * < > ?}
+
+puts "Welcome to Sam's password generator."
+
+begin
+  print "How many characters do you want in your password? "
+  pw_length = gets.to_i
+  print "Are any special characters allowed? [Y/n] "
+  specials_allowed = gets.to_s.downcase
+  #puts "specials_allowed = #{specials_allowed}"
+  if specials_allowed =~ /.?n.?/
+    specials = []
+  else
+    puts "Are any special characters prohibited?"
+    puts "Type each prohibited character followed by ENTER."
+    puts "Hit ENTER twice in a row when you are finished."
+    prohibited = gets('\n\n').chomp
+    puts prohibited.inspect
+
+  end
+  #puts "specials = #{specials}"
+  puts "Here is your randomly generated password:"
+  puts (lowercase + uppercase + numbers + specials).shuffle[0..pw_length].join
+#rescue Exception => e
+  #puts "Looks like there was an error.  Try again."
+  #retry
+  
+end
 
 # Creates password with upper- and lower-case characters, numbers, and non-word characters 
 
