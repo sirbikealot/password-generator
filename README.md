@@ -1,9 +1,8 @@
-## useful-ruby-utilities
+## Password Generator
 
-###Some file utilities written in Ruby
+ - password_generator.rb (Customizable password creator)
 
- - ruby-ls (A ruby clone of POSIX ls command. Course assignment from [**elm-city-craftworks/**course-001](https://github.com/sirbikealot/course-001/blob/master/PART_1.md)
- - password_generator (Customizable password creator)
+ - password_gen (Executable version)
 
 **24 March 2015**
  - Added user interface for password_generator.rb.  User can select password length and omit special characters.
